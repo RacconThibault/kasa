@@ -1,0 +1,36 @@
+@import '../../style/settings.scss';
+
+.bannerWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+
+  .titleWrapper {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: $primaryColor;
+      font-weight: bold;
+      font-size: 46px;
+      @media screen and (max-width: 768px) {
+        font-size: 36px;
+      }
+    }
+  }
+}
+.backgroundImage {
+  width: 100%;
+  height: 260px;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(35%);
+}

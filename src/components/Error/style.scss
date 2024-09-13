@@ -1,0 +1,19 @@
+@import '../../style/settings.scss';
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    margin: 0px;
+    font-size: 16vw;
+    color: $secondaryColor;
+  }
+  p {
+    font-size: 3vw;
+    color: $secondaryColor;
+  }
+  a {
+    color: $textColor;
+  }
+}

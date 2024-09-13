@@ -1,0 +1,48 @@
+@import '../../style/settings.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 27%;
+  height: 350px;
+  padding: 20px;
+  border: 1px solid rgb(13, 13, 13);
+  border-radius: 10px;
+  text-decoration: none;
+  color: $primaryColor;
+  font-size: 18px;
+  overflow: hidden;
+  background: linear-gradient(
+    184deg,
+    rgba(254, 149, 149, 1) 14%,
+    rgba(221, 77, 77, 1) 82%,
+    rgba(156, 48, 48, 1) 96%
+  );
+  @media (max-width: 1200px) {
+    width: 40%;
+  }
+
+  @media (max-width: 992px) {
+    width: 60%;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+
+  @media (max-width: 576px) {
+    width: 90%;
+    height: auto;
+    padding: 10px;
+    font-size: 15px;
+  }
+  img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    @media (max-width: 576px) {
+      height: 180px;
+    }
+  }
+}
