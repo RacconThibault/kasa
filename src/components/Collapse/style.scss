@@ -1,7 +1,7 @@
 @import '../../style/settings.scss';
 
 .collapseWrapper {
-  width: 75%;
+  width: 100%;
   color: $primaryColor;
   gap: 20px;
   background-color: inherit;
@@ -16,6 +16,14 @@
       border: none;
       font-size: 40px;
       padding: 0;
+      .chevronIcon {
+        color: $primaryColor;
+        transition: 300ms ease-in-out;
+
+        &.rotate {
+          transform: rotate(-180deg);
+        }
+      }
       &:hover {
         cursor: pointer;
       }
@@ -26,16 +34,24 @@
     background-color: #f6f6f6;
     color: $textColor;
     font-size: 18px;
-    padding: 20px;
-    transition: all 0.5s;
+    height: 0px;
+    overflow: hidden;
+    transition: 300ms ease-in-out;
+    padding: 0 20px;
+    &.open {
+      height: 100%;
+      padding: 20px;
+    }
     .collapseChildren {
       margin: 0px;
     }
     ul {
       display: flex;
       flex-direction: column;
-      align-items: baseline;
-      gap: 20px;
+      align-items: flex-start;
+      gap: 5px;
+      padding: 0px;
+      margin: 0px;
     }
     li {
       list-style: none;

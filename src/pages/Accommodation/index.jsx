@@ -11,26 +11,6 @@ function Accommodation() {
   const params = useParams();
   const rent = rentList.find((rent) => rent.id === params.id);
 
-  const renderStars = (rating) => {
-    const stars = [];
-    for (let i = 0; i < 5; i++) {
-      if (i < rating) {
-        stars.push(
-          <span key={i} className="star filled">
-            <FontAwesomeIcon icon={faStar} style={{ color: '#ff6060' }} />
-          </span>
-        );
-      } else {
-        stars.push(
-          <span key={i} className="star">
-            <FontAwesomeIcon icon={faStar} style={{ color: '#d4d4d4' }} />
-          </span>
-        );
-      }
-    }
-    return stars;
-  };
-
   return (
     <div className="accommodation">
       <Carousel rent={rent} />
@@ -40,7 +20,7 @@ function Accommodation() {
           <p>{rent.location}</p>
           <div className="tags">
             {rent.tags.map((tag, index) => (
-              <div className="tag" key={index}>
+              <div className="tags__individual" key={index}>
                 {tag}
               </div>
             ))}
@@ -51,7 +31,13 @@ function Accommodation() {
             <span>{rent.host.name}</span>
             <img src={rent.host.picture} alt={rent.host.name} />
           </div>
-          <div className="rating">{renderStars(rent.rating)}</div>
+          <div className="rating">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <span key={i} className={`star ${i <= rent.rating && 'filled'}`}>
+                <FontAwesomeIcon icon={faStar} />
+              </span>
+            ))}
+          </div>
         </div>
       </div>
       <div className="descriptionAndEquipments">

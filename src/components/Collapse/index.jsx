@@ -17,18 +17,13 @@ const Collapse = ({ title, children }) => {
         <button onClick={toggleCollapse}>
           <FontAwesomeIcon
             icon={faChevronUp}
-            style={{
-              color: '#ffffff',
-              transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-            }}
+            className={isOpen ? 'chevronIcon rotate' : 'chevronIcon'}
           />
         </button>
       </div>
-      {isOpen && (
-        <div className="openCollapse">
-          <div className="collpaseChildren">{children}</div>
-        </div>
-      )}
+      <div className={`openCollapse ${isOpen && 'open'}`}>
+        <div className="collpaseChildren">{children}</div>
+      </div>
     </div>
   );
 };

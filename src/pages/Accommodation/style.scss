@@ -1,14 +1,16 @@
 @import '../../style/settings.scss';
 
 .accommodation {
-  margin-left: 50px;
-  margin-right: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  @media screen and (max-width: 600px) {
+    padding: 10px;
+  }
 
   .accommodationInformation {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    gap: 50px;
 
     .location {
       display: flex;
@@ -26,6 +28,23 @@
     p {
       margin: 0px;
     }
+    .tags {
+      display: flex;
+      gap: 20px;
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30vw;
+        height: 25px;
+        max-width: 150px;
+        font-weight: bold;
+        padding: 3px;
+        border-radius: 12px;
+        background-color: $secondaryColor;
+        color: $primaryColor;
+      }
+    }
     .hostAndRating {
       display: flex;
       flex-direction: column;
@@ -38,45 +57,69 @@
         font-size: 22px;
         text-align: center;
         gap: 10px;
-        img {
-          width: 45%;
-          height: 85%;
-          border-radius: 50%;
-        }
-        h3 {
-          margin: 0px;
+        > span {
+          font-size: max(18px, 12px);
         }
       }
-      .rating {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-        font-size: 23px;
-        margin-bottom: 15px;
+      img {
+        width: 18vw;
+        height: 18vw;
+        max-width: 80px;
+        max-height: 80px;
+        border-radius: 50%;
+      }
+      h3 {
+        margin: 0px;
       }
     }
-  }
-  .tags {
-    display: flex;
-    gap: 20px;
-    .tag {
+    .rating {
       display: flex;
+      gap: 10px;
       justify-content: center;
       align-items: center;
-      width: 150px;
-      height: 25px;
-      font-weight: bold;
-      padding: 3px;
-      border-radius: 12px;
-      background-color: $secondaryColor;
-      color: $primaryColor;
+
+      .star {
+        color: #f6f6f6;
+
+        > svg {
+          width: 5vw;
+          height: 5vw;
+          max-width: 25px;
+          max-height: 25px;
+        }
+        &.filled {
+          color: $secondaryColor;
+        }
+      }
+    }
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+      .hostAndRating {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .host {
+        order: 2;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .tags {
+        gap: 10px;
+        > div {
+          width: 22vw;
+        }
+      }
     }
   }
-  .descriptionAndEquipments {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
+}
+
+.descriptionAndEquipments {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  overflow: hidden;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
   }
 }

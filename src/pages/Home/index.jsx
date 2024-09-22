@@ -13,7 +13,7 @@ function Home() {
         bannerImage={backgroundImage}
         alt="Photo d'une falaise marine"
       />
-      <div className="homeContainer__cardContainer">
+      <div className="cardContainer">
         {rentList.map((rent) => (
           <Card key={rent.id} rent={rent} />
         ))}

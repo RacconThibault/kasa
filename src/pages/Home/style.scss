@@ -2,30 +2,27 @@
 
 .homeContainer {
   font-family: $fontFamily;
-  margin-left: 50px;
-  margin-right: 50px;
-  gap: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  gap: 50px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  @media screen and (max-width: 425px) and (min-width: 320px) {
-    width: 90%;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  &__cardContainer {
+  .cardContainer {
     border-radius: 25px;
-    padding-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 3%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    gap: 30px;
     background-color: #f6f6f6;
-    @media screen and (max-width: 425px) and (min-width: 320px) {
-      width: 100%;
-      flex-direction: column;
-      justify-content: center;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+    padding-right: 10px;
+    .cardContainer {
+      padding: 10px;
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }
