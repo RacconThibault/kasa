@@ -1,0 +1,28 @@
+@import '../../style/settings.scss';
+
+.homeContainer {
+  font-family: $fontFamily;
+  padding-left: 50px;
+  padding-right: 50px;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  .cardContainer {
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    gap: 30px;
+    background-color: #f6f6f6;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+    padding-right: 10px;
+    .cardContainer {
+      padding: 10px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
