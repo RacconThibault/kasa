@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import Collapse from '../../components/Collapse';
 import Carousel from '../../components/Carousel';
-import rentList from '../../datas/logements.json';
+import { DataContext } from '../../Provider/DataContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './style.scss';
 
 function Accommodation() {
+  const { housing, loading } = useContext(DataContext); // Récupération des données via le contexte
+
+  if (loading) {
+    return <p>Chargement des logements...</p>; // Affichage pendant le chargement
+  }
   const params = useParams();
-  const rent = rentList.find((rent) => rent.id === params.id);
+  const rent = housing.find((rent) => rent.id === params.id);
 
   return (
     <div className="accommodation">

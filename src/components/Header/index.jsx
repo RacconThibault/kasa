@@ -6,7 +6,9 @@ import './style.scss';
 function Header() {
   return (
     <div className="navWrapper">
-      <img src={logokasa} alt="Logo" />
+      <Link to="/">
+        <img src={logokasa} alt="Logo" />
+      </Link>
       <div className="linkWrapper">
         <Link to="/">Accueil</Link>
         <Link to="/about">A propos</Link>
