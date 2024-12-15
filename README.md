@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# Kasa
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce projet, réalisé dans le cadre de la formation **Développeur Web** d'OpenClassrooms, consiste à développer une application web de location immobilière en utilisant **React**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Objectifs du projet
 
-### `npm start`
+- **Développer une application web** : Créer une interface utilisateur interactive pour la plateforme de location Kasa.
+- **Utiliser React** : Mettre en œuvre des composants React modulaires et réutilisables.
+- **Gérer les routes avec React Router** : Implémenter une navigation fluide entre les différentes pages de l'application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Fonctionnalités principales
 
-### `npm test`
+1. **Page d'accueil** :
+   - Afficher la liste des logements disponibles avec leurs informations principales.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Page de logement** :
+   - Présenter les détails d'un logement spécifique, y compris une galerie de photos, une description, les équipements, et les évaluations.
 
-### `npm run build`
+3. **Page À propos** :
+   - Fournir des informations sur la plateforme Kasa et ses valeurs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Page 404** :
+   - Afficher un message d'erreur lorsque l'utilisateur tente d'accéder à une page inexistante.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Prérequis
 
-### `npm run eject`
+- **Node.js** : Assurez-vous d'avoir Node.js installé sur votre machine.
+- **npm** : npm est nécessaire pour gérer les dépendances du projet.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Cloner le dépôt** :
+   ```bash
+   git clone https://github.com/RacoonyThibault/Kasa.git
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Naviguer dans le répertoire du projet** :
+   ```bash
+   cd Kasa
+   ```
 
-## Learn More
+3. **Installer les dépendances** :
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Lancer l'application** :
+   ```bash
+   npm start
+   ```
+   L'application sera accessible à l'adresse : [http://localhost:3000](http://localhost:3000)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Structure du projet
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+├── public/
+│   ├── index.html          # Fichier HTML principal
+│   └── ...                 # Autres fichiers publics
+├── src/
+│   ├── components/         # Composants React réutilisables
+│   ├── pages/              # Pages de l'application
+│   ├── assets/             # Images et autres ressources
+│   ├── App.js              # Composant principal de l'application
+│   ├── index.js            # Point d'entrée de l'application
+│   └── ...                 # Autres fichiers source
+├── package.json            # Fichier de configuration npm
+└── README.md               # Documentation
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Fonctionnement
 
-### Making a Progressive Web App
+### Affichage des logements
+- Les informations sur les logements sont affichées dynamiquement à partir des données locales ou d'une source externe.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Navigation
+- Utilisation de React Router pour naviguer entre les pages d'accueil, de détails des logements, À propos et 404.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Outils utilisés
 
-### Deployment
+- **React** : Bibliothèque principale pour la construction de l'interface utilisateur.
+- **React Router** : Pour la gestion des routes.
+- **CSS3** : Pour la mise en page et le style.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Auteur
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Thibault Frégier** : [Profil GitHub](https://github.com/RacoonyThibault)
+
+---
+
+## Licence
+
+Ce projet est réalisé dans le cadre d'un programme de formation et n'a pas vocation à être utilisé à des fins commerciales.
+
