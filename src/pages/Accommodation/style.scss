@@ -1,125 +1,153 @@
 @import '../../style/settings.scss';
 
 .accommodation {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 3rem;
+  @media screen and (max-width: 900px) {
+    padding: 2rem;
+  }
   @media screen and (max-width: 600px) {
-    padding: 10px;
+    padding: 1rem;
   }
 
   .accommodationInformation {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 1.25rem;
+
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
 
     .location {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      gap: 15px;
-    }
-    h2 {
-      color: $secondaryColor;
-      font-size: 36px;
-      margin: 0px;
-    }
-    p {
-      margin: 0px;
-    }
-    .tags {
-      display: flex;
-      gap: 20px;
-      > div {
+      gap: 1rem; 
+      margin: 1.25rem 0; 
+
+      h2 {
+        color: $secondaryColor;
+        font-size: 2.25rem; 
+        margin: 0;
+        @media screen and (max-width: 900px) {
+          font-size: 1.75rem; 
+        }
+        @media screen and (max-width: 600px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: 1rem; 
+        @media screen and (max-width: 600px) {
+          font-size: 0.875rem; 
+        }
+      }
+
+      .tags {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 30vw;
-        height: 25px;
-        max-width: 150px;
-        font-weight: bold;
-        padding: 3px;
-        border-radius: 12px;
-        background-color: $secondaryColor;
-        color: $primaryColor;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        @media screen and (max-width: 600px) {
+          gap:0.5rem
+        }
+        > div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+          padding: 0.3125rem 0.9375rem; 
+          border-radius: 0.75rem;
+          background-color: $secondaryColor;
+          color: $primaryColor;
+          font-weight: bold;
+          font-size: 0.875rem; 
+          @media screen and (max-width: 600px) {
+            font-size: 0.75rem;
+            padding: 0.3125rem 0.625rem; 
+          }
+        }
       }
     }
+
     .hostAndRating {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 1.25rem; 
+
+      @media screen and (max-width: 900px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
       .host {
         display: flex;
         align-items: center;
+        gap: 0.625rem; 
         color: $secondaryColor;
         font-weight: bold;
-        font-size: 22px;
-        text-align: center;
-        gap: 10px;
-        > span {
-          font-size: max(18px, 12px);
+        font-size: 1.125rem; 
+        span {
+          font-size: 1rem; 
+          @media screen and (max-width: 600px) {
+            font-size: 0.875rem;
+          }
         }
-      }
-      img {
-        width: 18vw;
-        height: 18vw;
-        max-width: 80px;
-        max-height: 80px;
-        border-radius: 50%;
-      }
-      h3 {
-        margin: 0px;
-      }
-    }
-    .rating {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      align-items: center;
 
-      .star {
-        color: #f6f6f6;
+        img {
+          width: 3.75rem; 
+          height: 3.75rem;
+          border-radius: 50%;
+          @media screen and (max-width: 600px) {
+            width: 3.125rem;
+            height: 3.125rem;
+          }
+        }
+      }
 
-        > svg {
-          width: 5vw;
-          height: 5vw;
-          max-width: 25px;
-          max-height: 25px;
-        }
-        &.filled {
-          color: $secondaryColor;
-        }
-      }
-    }
-    @media screen and (max-width: 900px) {
-      flex-direction: column;
-      .hostAndRating {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-      .host {
-        order: 2;
-      }
-    }
-    @media screen and (max-width: 600px) {
-      .tags {
-        gap: 10px;
-        > div {
-          width: 22vw;
+      .rating {
+        display: flex;
+        gap: 0.3125rem; 
+
+        .star {
+          color: #f6f6f6;
+
+          svg {
+            width: 1.25rem; 
+            height: 1.25rem;
+            @media screen and (max-width: 600px) {
+              width: 1rem; 
+              height: 1rem;
+            }
+          }
+
+          &.filled {
+            color: $secondaryColor;
+          }
         }
       }
     }
   }
-}
 
-.descriptionAndEquipments {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  overflow: hidden;
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
+  .descriptionAndEquipments {
+    margin-top: 1.875rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.875rem; 
+    overflow: hidden;
+
+    @media screen and (max-width: 900px) {
+      gap: 1.5rem; 
+    }
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .collapse {
+      width: 100%;
+    }
   }
 }

@@ -3,8 +3,9 @@
 .bannerWrapper {
   position: relative;
   width: 100%;
-  height: 100%;
-  margin-top: 30px;
+  height: auto; 
+  margin-top: 2rem;
+
 
   .titleWrapper {
     position: absolute;
@@ -16,21 +17,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     h1 {
       color: $primaryColor;
       font-weight: bold;
-      font-size: 46px;
+      font-size: 3rem; 
+      text-align: center; 
+      
+      @media screen and (max-width: 1024px) {
+        font-size: 2.5rem; 
+      }
+
       @media screen and (max-width: 768px) {
-        font-size: 36px;
+        font-size: 2rem; 
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 1.5rem; 
       }
     }
   }
+
   .backgroundImage {
     width: 100%;
-    height: 260px;
-    border-radius: 20px;
+    height: auto;
+    max-height: 20rem; 
+    border-radius: 1.25rem; 
     object-fit: cover;
     object-position: center;
     filter: brightness(35%);
+
+    @media screen and (max-width: 768px) {
+      max-height: 15rem; 
+    }
+
+    @media screen and (max-width: 480px) {
+      max-height: 12rem; 
+    }
   }
 }

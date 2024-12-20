@@ -36,3 +36,4 @@ export const DataProvider = ({ children }) => {
     </DataContext.Provider>
   );
 };
+export const useDataContext = () => useContext(DataContext);

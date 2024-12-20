@@ -2,27 +2,35 @@
 
 .homeContainer {
   font-family: $fontFamily;
-  padding-left: 50px;
-  padding-right: 50px;
-  gap: 50px;
+  padding: 0 3rem;
+  gap: 3rem; 
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   flex-wrap: wrap;
-  .cardContainer {
-    border-radius: 25px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-    gap: 30px;
-    background-color: #f6f6f6;
+  @media screen and (max-width: 1020px){
+    padding: 0 2.2rem;
   }
   @media screen and (max-width: 768px) {
-    width: 100%;
-    padding: 10px;
-    padding-right: 10px;
-    .cardContainer {
-      padding: 10px;
-      grid-template-columns: repeat(1, 1fr);
+    padding: 0 1.8rem;
+  }
+  
+
+  .cardContainer {
+    border-radius: 1.5rem; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    padding: 1.25rem; 
+    gap: 2rem; 
+    background-color: #f6f6f6;
+
+    @media screen and (max-width: 1020px) {
+      grid-template-columns: repeat(2, 1fr); 
+      padding: 1rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr); 
+      padding: 0.75rem;
     }
   }
 }

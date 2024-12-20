@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import Collapse from '../../components/Collapse';
 import Carousel from '../../components/Carousel';
 import { DataContext } from '../../Provider/DataContext';
@@ -9,12 +9,15 @@ import './style.scss';
 
 function Accommodation() {
   const { housing, loading } = useContext(DataContext); // Récupération des données via le contexte
-
+  const params = useParams();
   if (loading) {
     return <p>Chargement des logements...</p>; // Affichage pendant le chargement
   }
-  const params = useParams();
+  
   const rent = housing.find((rent) => rent.id === params.id);
+  if(!rent){
+    return <Navigate to="*"/>
+  }
 
   return (
     <div className="accommodation">
@@ -32,16 +35,17 @@ function Accommodation() {
           </div>
         </div>
         <div className="hostAndRating">
-          <div className="host">
-            <span>{rent.host.name}</span>
-            <img src={rent.host.picture} alt={rent.host.name} />
-          </div>
+          
           <div className="rating">
             {[1, 2, 3, 4, 5].map((i) => (
               <span key={i} className={`star ${i <= rent.rating && 'filled'}`}>
                 <FontAwesomeIcon icon={faStar} />
               </span>
             ))}
+          </div>
+          <div className="host">
+            <span>{rent.host.name}</span>
+            <img src={rent.host.picture} alt={rent.host.name} />
           </div>
         </div>
       </div>
