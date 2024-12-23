@@ -1,29 +1,29 @@
 @import '../../style/settings.scss';
 
 footer {
-  width: 100%; /* Toujours prendre la largeur maximale de l'écran */
+  width: 100%; 
   font-family: $fontFamily;
   background-color: $textColor;
   color: $primaryColor;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem; /* Espacement fluide entre les éléments */
-  padding: 2rem 1rem 0; /* Padding supérieur avec zéro en bas */
-  margin-top: 2.5rem; /* Marge au-dessus pour séparer du contenu précédent */
+  gap: 1.25rem; 
+  padding: 2rem 1rem 0; 
+  margin-top: 2.5rem; 
 
-  /* Pour tablettes */
+
   @media (max-width: 768px) {
     padding: 1.5rem 1rem 0;
     margin-top: 2rem;
     gap: 1rem;
 
     p {
-      font-size: 1.25rem; /* Taille de police fluide (~20px) */
+      font-size: 1.25rem; 
     }
   }
 
-  /* Pour mobiles */
+ 
   @media (max-width: 480px) {
     padding: 1rem 0.5rem 0;
     margin-top: 1.25rem;

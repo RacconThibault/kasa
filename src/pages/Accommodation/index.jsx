@@ -8,10 +8,10 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './style.scss';
 
 function Accommodation() {
-  const { housing, loading } = useContext(DataContext); // Récupération des données via le contexte
+  const { housing, loading } = useContext(DataContext); 
   const params = useParams();
   if (loading) {
-    return <p>Chargement des logements...</p>; // Affichage pendant le chargement
+    return <p>Chargement des logements...</p>; 
   }
   
   const rent = housing.find((rent) => rent.id === params.id);
